@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:5173")
 @RequestMapping("/api/products")
 public class ProductController {
 
@@ -28,6 +29,13 @@ public class ProductController {
         return productService.getProductById(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
+    }
+
+    @GetMapping("/category/{category}")
+    public List<Product> getProductsByCategory(
+            @PathVariable String category) {
+
+        return productService.getProductsByCategory(category);
     }
 
     @PostMapping

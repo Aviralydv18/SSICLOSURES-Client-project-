@@ -15,11 +15,15 @@ public class Product {
     @Column(length = 2000)
     private String description;
 
+    private String category;
+
     private String material;
 
     private String size;
 
     private String application;
+
+    private Double price;
 
     private String imageUrl;
 
@@ -50,6 +54,14 @@ public class Product {
         this.description = description;
     }
 
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
     public String getMaterial() {
         return material;
     }
@@ -72,6 +84,14 @@ public class Product {
 
     public void setApplication(String application) {
         this.application = application;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
     }
 
     public String getImageUrl() {

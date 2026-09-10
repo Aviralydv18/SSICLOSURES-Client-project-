@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
+import logo from "../assets/logo.jpeg";
 
 function Header() {
 
@@ -20,12 +21,20 @@ function Header() {
 
                     {/* Logo */}
 
-                    <Link
+                     <Link
                         to="/"
                         onClick={closeMenu}
-                        className="text-2xl font-bold text-[#023E8A]"
+                        className="flex items-center gap-6"
                     >
-                        SSICLOSURES
+                        <img
+                            src={logo}
+                            alt="SSI Closures Logo"
+                            className="h-20 w-auto object-contain"
+                        />
+
+                        <span className="text-2xl font-bold text-[#023E8A]">
+                            SSICLOSURES
+                        </span>
                     </Link>
 
 

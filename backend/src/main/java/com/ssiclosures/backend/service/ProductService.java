@@ -24,6 +24,10 @@ public class ProductService {
         return productRepository.findById(id);
     }
 
+    public List<Product> getProductsByCategory(String category) {
+        return productRepository.findByCategory(category);
+    }
+
     public Product createProduct(Product product) {
         return productRepository.save(product);
     }
@@ -35,9 +39,11 @@ public class ProductService {
 
         existingProduct.setName(product.getName());
         existingProduct.setDescription(product.getDescription());
+        existingProduct.setCategory(product.getCategory());
         existingProduct.setMaterial(product.getMaterial());
         existingProduct.setSize(product.getSize());
         existingProduct.setApplication(product.getApplication());
+        existingProduct.setPrice(product.getPrice());
         existingProduct.setImageUrl(product.getImageUrl());
 
         return productRepository.save(existingProduct);

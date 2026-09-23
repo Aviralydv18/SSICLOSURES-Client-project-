@@ -1,53 +1,86 @@
 import { Link } from "react-router-dom";
-import SectionTitle from "./SectionTitle";
+import industry2 from "../assets/industry2.png";
 
 function AboutPreview() {
     return (
-        <section className="py-20 bg-white">
+        <section className="bg-white py-24 md:py-32">
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 
-                <SectionTitle
-                    title="About SSICLOSURES"
-                    subtitle="A trusted manufacturer focused on quality, precision and reliable aluminium closure solutions."
-                />
+                <div className="flex items-center gap-4 mb-10">
+                    <span className="w-10 h-[2px] bg-[#023E8A]" />
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <p className="text-[#023E8A] text-sm font-semibold uppercase tracking-[0.25em]">
+                        About SSICLOSURES
+                    </p>
+                </div>
 
-                    {/* Image */}
+                <div className="max-w-5xl">
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-gray-900 leading-[1.05] tracking-tight">
+                        Closure solutions designed
+                        <span className="text-[#023E8A]">
+                            {" "}for demanding industries.
+                        </span>
+                    </h2>
+                </div>
 
-                    <div className="h-[350px] bg-gray-200 rounded-2xl flex items-center justify-center">
-                        <p className="text-gray-500">
-                            Manufacturing Facility Image
-                        </p>
+                <div className="mt-20 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+
+                    <div className="lg:col-span-7">
+
+                        <div className="relative h-[420px] md:h-[520px] overflow-hidden bg-[#EAF4FB]">
+
+                            <img
+                                src={industry2}
+                                alt="SSICLOSURES manufacturing"
+                                className="w-full h-full object-cover hover:scale-105 transition duration-700"
+                            />
+
+                            <div className="absolute inset-0 bg-black/20" />
+
+                            <div className="absolute bottom-0 left-0 bg-[#023E8A] text-white px-6 py-5">
+                                <p className="text-xs uppercase tracking-[0.2em] text-white/70">
+                                    SSICLOSURES
+                                </p>
+
+                                <p className="mt-1 font-semibold">
+                                    Precision • Consistency • Reliability
+                                </p>
+                            </div>
+
+                        </div>
+
                     </div>
 
+                    <div className="lg:col-span-5 flex flex-col justify-center">
 
-          
-
-                    <div>
-
-                        <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
-                            Quality Manufacturing With Precision
-                        </h3>
-
-                        <p className="mt-5 text-gray-600 leading-relaxed">
-                            SSICLOSURES is focused on manufacturing reliable
-                            aluminium closure solutions for industries where
-                            quality, consistency and performance matter.
+                        <p className="text-xl md:text-2xl text-gray-900 leading-relaxed font-medium">
+                            SSICLOSURES develops and supplies closure
+                            solutions for industries where reliable
+                            packaging performance matters.
                         </p>
 
-                        <p className="mt-4 text-gray-600 leading-relaxed">
-                            Our products are designed to support the specific
-                            requirements of pharmaceutical, cosmetic and
-                            distillery applications.
+                        <p className="mt-6 text-gray-600 leading-relaxed">
+                            Our focus is on delivering consistent products
+                            that meet the requirements of pharmaceutical,
+                            cosmetic, distillery, beverage and other
+                            packaging applications.
+                        </p>
+
+                        <p className="mt-5 text-gray-600 leading-relaxed">
+                            From product selection to customer requirements,
+                            we aim to build dependable solutions for both
+                            domestic and international supply.
                         </p>
 
                         <Link
                             to="/about"
-                            className="inline-block mt-6 bg-[#023E8A] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#012f68] transition"
+                            className="group inline-flex items-center gap-3 mt-10 text-[#023E8A] font-semibold w-fit"
                         >
-                            Learn More
+                            Discover SSICLOSURES
+                            <span className="text-xl group-hover:translate-x-2 transition-transform">
+                                →
+                            </span>
                         </Link>
 
                     </div>
@@ -55,7 +88,6 @@ function AboutPreview() {
                 </div>
 
             </div>
-
         </section>
     );
 }

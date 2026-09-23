@@ -7,3 +7,197 @@ html {
 body {
     margin: 0;
 }
+
+/* =====================================================
+   SSICLOSURES PRELOADER
+===================================================== */
+
+.preloader-logo {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+    animation: preloaderLogo 0.8s ease-out forwards;
+}
+
+
+/* =====================================================
+   COMPANY NAME
+===================================================== */
+
+.preloader-title {
+    display: flex;
+    color: rgba(255, 255, 255, 0.18);
+    font-size: clamp(2.2rem, 6vw, 5.5rem);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1;
+}
+
+.preloader-title span {
+    display: inline-block;
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+
+    background: linear-gradient(
+        to top,
+        #D6B98C 0%,
+        #F5E6CC 100%
+    );
+
+    background-size: 100% 0%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: rgba(255, 255, 255, 0.18);
+
+    animation:
+        preloaderLetter 0.7s ease-out forwards,
+        preloaderFill 0.8s ease-in-out forwards;
+}
+
+
+/* =====================================================
+   TAGLINE
+===================================================== */
+
+.preloader-line {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: preloaderLine 0.7s ease-out 1.35s forwards;
+}
+
+
+/* =====================================================
+   LOADING BAR
+===================================================== */
+
+.preloader-progress {
+    width: 0%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        #8B7355,
+        #F5E6CC
+    );
+
+    animation: preloaderProgress 2.1s ease-in-out forwards;
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+@keyframes preloaderLogo {
+
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.96);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* =====================================================
+   LETTER APPEAR
+===================================================== */
+
+@keyframes preloaderLetter {
+
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =====================================================
+   LETTER FILL
+===================================================== */
+
+@keyframes preloaderFill {
+
+    0% {
+        background-size: 100% 0%;
+    }
+
+    100% {
+        background-size: 100% 100%;
+    }
+
+}
+
+
+/* =====================================================
+   TAGLINE
+===================================================== */
+
+@keyframes preloaderLine {
+
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =====================================================
+   LOADING BAR
+===================================================== */
+
+@keyframes preloaderProgress {
+
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+
+}
+
+
+/* =====================================================
+   SWIPE UP
+===================================================== */
+
+.preloader-exit {
+    animation: preloaderSwipeUp
+        0.8s
+        cubic-bezier(0.77, 0, 0.18, 1)
+        forwards;
+}
+
+@keyframes preloaderSwipeUp {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-100%);
+    }
+
+}

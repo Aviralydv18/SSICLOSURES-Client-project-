@@ -11,13 +11,16 @@ import ProductDetails from "./pages/ProductDetails";
 import Infrastructure from "./pages/Infrastructure";
 import WhoWeServe from "./pages/WhoWeServe";
 import Contact from "./pages/Contact";
-import AddProduct from "./pages/AddProduct";
+import EmailButton from "./components/emailButton";
+
+import Preloader from "./components/Preloader";
 
 function App() {
 
     return (
 
         <BrowserRouter>
+        <Preloader />
 
             <Header />
 
@@ -62,12 +65,10 @@ function App() {
                     path="/contact"
                     element={<Contact />}
                 />
-                <Route
-                    path="/add-product"
-                    element={<AddProduct />}
-                />
 
             </Routes>
+            <EmailButton />
+             
 
             <Footer />
 
